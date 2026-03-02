@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-header {
+    background-color:#03a3df ;
+    padding: 40px o;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display:flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 100px;
+    height:auto;
+}
+
+.logo-text .main {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.logo-text .sub {
+    display: block;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
