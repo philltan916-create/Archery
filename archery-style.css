@@ -1,11 +1,27 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    color:black;
+}
+
+.skip-link{
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus{
+    top: 0;
 }
 
 .site-header {
     background-color:#03a3df ;
-    padding: 40px o;
+    padding: 40px 0;
 }
 
 .container {
@@ -49,6 +65,29 @@ body {
     gap: 10px;
     color: white;
 }
+#navToggle {
+    display: none;
+}
+
+@media (max-width:768px) {
+    #navToggle {
+        display: block;
+        background:none;
+        border:none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+}
 
 .nav a {
     color: white;
@@ -57,5 +96,111 @@ body {
 }
 
 .nav a:hover {
-    text-decoration: underline;
+    color:#ecb722
+    text-decoration underline;
+}
+
+section{
+padding:60px 0;
+background:white;
+margin-bottom:30px;
+}
+
+section h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+color:#1b447f;
+}
+
+
+
+.classes-section{
+padding:60px 0;
+background:white;
+}
+
+.class-grid{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+gap:30px;
+margin-top:30px;
+}
+
+.class-card{
+background:#f4f4f4;
+padding:30px;
+text-align:center;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.class-card:hover{
+transform:translateY(-6px);
+}
+
+.class-card h3{
+margin-top:0;
+color:#03a3df;
+}
+
+.price{
+font-size:26px;
+font-weight:bold;
+margin-top:10px;
+color:#ecb722
+}
+
+
+
+.instructor-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:white;
+border-top: 5px solid #03a3df;
+padding:25px;
+border-radius:8px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.card h3{
+margin-top:0;
+}
+
+
+
+
+
+.site-footer{
+
+background-image: url("images/footerImage.jpg");
+
+background-size: cover;
+background-position: center;
+
+color: white;
+
+text-align: center;
+
+padding: 80px 20px;
+
+}
+
+
+.footer-content{
+
+background: rgba(0,0,0,0.45);
+
+padding: 30px;
+
+max-width: 800px;
+
+margin: auto;
+
 }

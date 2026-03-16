@@ -6,11 +6,31 @@
         <title>Straight To The Point Archery</title>
         <link rel="stylesheet" href="archery-style.css">
     </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.toggle-bio').forEach(button => {
+                button.addEventListener('click', () => {
+                    const bio = document.getElementById(button.getAttribute('aria-controls'));
+                    const isHidden = bio.hasAttribute('hidden');
+
+                    bio.hidden = !isHidden;
+                    button.textContent = isHidden ? 'Hide Bio' : 'Show Bio';
+                    button.setAttribute('aria-expanded', isHidden);
+                });
+            });
+        });
+    </script>
     <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
         <header class="site-header">
             <div class="container">
+                <button id="navToggle" aria-label="Open Navigation" aria-expanded="false">
+                     ☰
+                </button>
+                
                 <div class="logo">
-                    <img src="archeryAcademy-logo-white.png" alt="Archery Academy Logo" />
+                    <img src="C:\Users\tanne\OneDrive\Desktop\Archery\images\archeryAcademy-logo-white.png" alt="Archery Academy Logo" />
                 
                 </div>
 
@@ -25,7 +45,8 @@
         </header>
 
     
-        <section class="about">
+        <section id="main-content" class="about">
+            
             <div class="container">
                 <h2>About Straight to the Point Archery</h2>
                 <p>Straight to the Point Archery is a non profit archery education center founded in 2005 by Giap Nguyen.  Our state of the art educational and training facility incorporates detailed technical video analysis combined with generations of archery experience from certified coaches and instructors.
@@ -43,43 +64,59 @@
         </section>
 
         <audio controls>
-            <source src="images/ES_Weapons, Arrow, Arrow Impact, Wooden 01 - Epidemic Sound.mp3" type="audio/mpeg">
+            <source src="C:\Users\tanne\OneDrive\Desktop\Archery\images\ES_Weapons, Arrow, Arrow Impact, Wooden 01 - Epidemic Sound.mp3" type="audio/mpeg">
+            <audio id="clicksound" src="C:\Users\tanne\OneDrive\Desktop\Archery\images\ES_Weapons, Arrow, Arrow Impact, Wooden 01 - Epidemic Sound.mp3" preload="auto"></audio>
             Your browser does not support the audio
         </audio>
 
-        <h2>Our Instructors</h2>
+        <h2 id="instructors">Our Instructors</h2>
 
-        <div class="instructor">
-         <img src="images\instructor-bio-image1.png" alt="Derek Jenkins">
+        <div class="instructors">
+         <img src="c:\Users\tanne\OneDrive\Desktop\Archery\images\instructor-bio-image1.png" alt="Derek Jenkins">
 
          <div>
             <h3>Derek Jenkins</h3>
-            <p> Derek is a Washington native and an experienced outdoorsman with many years hunting, fishing, skiing, canoeing, archery, shooting and minimalistic camping. His skillful mastery of bushcraft and wilderness survival knowledge helps define his character. He enjoys handcrafting his own long bows, flint knapped primitive arrows and making custom leather products.</p>
+            <button class="toggle-bio" aria-expanded="false" aria-controls="bio1">
+                Show Bio
+            </button>
+            <p id="bio1" class="bio" hidden> 
+                Derek is a Washington native and an experienced outdoorsman with many years hunting, fishing, skiing, canoeing, archery, shooting and minimalistic camping. His skillful mastery of bushcraft and wilderness survival knowledge helps define his character. He enjoys handcrafting his own long bows, flint knapped primitive arrows and making custom leather products.
+            </p>
          </div>
         </div>
 
-        <div class="instructor">
-            <img src="images\instructor-bio-image2.pngg" alt="Amy Smith">
+        <div class="instructors">
+            <img src="c:\Users\tanne\OneDrive\Desktop\Archery\images\instructor-bio-image2.png" alt="Amy Smith">
 
             <div>
                 <h3>Amy Smith</h3>
-                <p> Amy truly has a passion for archery. She comes from a long line of hunters, fisherman, and trappers of Canada. Amy  places a strong emphasis on safety and is enthusiastic about teaching. Amy also loves fitness, and  has been a YMCA group exercise and personal trainer for over 18 years.</p>
+                <button class="toggle-bio" aria-expanded="false" aria-controls="bio2">
+                    Show Bio
+                </button>
+                <p id="bio2" class="bio" hidden>
+                    Amy truly has a passion for archery. She comes from a long line of hunters, fisherman, and trappers of Canada. Amy  places a strong emphasis on safety and is enthusiastic about teaching. Amy also loves fitness, and  has been a YMCA group exercise and personal trainer for over 18 years.
+                </p>
             </div>
         </div>
 
-        <div class="instructor">
-            <img src="images\instructor-bio-image3.png" alt="Nathan Lee">
+        <div class="instructors">
+            <img src="c:\Users\tanne\OneDrive\Desktop\Archery\images\instructor-bio-image3.png" alt="Nathan Lee">
 
             <div>
                 <h3>Nathan Lee</h3>
-                <p>Nathan is an USA Archery Certified Level 3 NTS – Coach and has been teaching archery since 2009. He has been interested in archery since he nocked his first arrow while a Boy Scout at Scout camp. Nathan has many years of experience teaching people of all ages, experience gained as a Martial Arts Instructor and Studio Manager.</p>
+                <button class="toggle-bio" aria-expanded="false" aria-controls="bio3">
+                    Show Bio
+                </button>
+                <p id="bio3" class="bio" hidden>
+                    Nathan is an USA Archery Certified Level 3 NTS – Coach and has been teaching archery since 2009. He has been interested in archery since he nocked his first arrow while a Boy Scout at Scout camp. Nathan has many years of experience teaching people of all ages, experience gained as a Martial Arts Instructor and Studio Manager.
+                </p>
             </div>
         </div>
 </div>
         
         </section>
 
-        <footer>
+        
             <footer class="site-footer">
 
                 <div class="footer-content">
@@ -95,13 +132,11 @@
                 </div>
 
             </footer>   
-        </footer>
+        
     </body>
 
 
    
 
     
-
 </html>
-
